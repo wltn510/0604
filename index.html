@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+      integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      body {
+        margin: 0;
+      }
+      .container,
+      .container2 {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        background-color: rgb(255, 219, 219);
+      }
+      .container2 {
+        background-color: rgb(255, 255, 255);
+      }
+
+      .tittle {
+        position: absolute;
+        padding: 50px;
+        margin: auto;
+        top: 0;
+        left: 0;
+      }
+
+      .box {
+        /*             width: 100px;
+            height: 100px; */
+        /*             margin: 50px; */
+        background-size: cover;
+        background-position: center;
+      }
+      .box1 {
+        background-image: url("img/image1.png");
+      }
+      /*         .box2 {
+            background-image: url('img/image2.png');
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 255, 0);
+            
+        } */
+      .box3 {
+        background-image: url("img/me.png");
+        width: 600px;
+        height: 600px;
+        margin-right: 100px;
+      }
+      .box4 {
+      }
+      .box5 {
+        background-image: url("img/psae.png");
+        width: 300px;
+        height: 600px;
+      }
+      .box6 {
+        background-image: url("img/aiid.png");
+        width: 300px;
+        height: 600px;
+      }
+      .box7 {
+        background-image: url("img/email.png");
+        width: 400px;
+        height: 427px;
+        margin-right: 100px;
+      }
+      .box8 {
+        background-image: url("img/call.png");
+        width: 400px;
+        height: 427px;
+        margin-left: 100px;
+      }
+      .back-to-position {
+        opacity: 0;
+        transition: 1s;
+      }
+      .back-to-position.to-right {
+        transform: translateX(-150px);
+      }
+      .back-to-position.to-left {
+        transform: translateX(150px);
+      }
+      .show .back-to-position {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .show .back-to-position.delay-0 {
+        transition-delay: 0.3s;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 40px;
+        line-height: 60px;
+      }
+
+      p {
+        font-size: 32px;
+      }
+
+      p span {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section scroll-spy">
+      <div class="container">
+        <div class="tittle"><img src="img/HOME.png" alt="" /></div>
+        <div class="box box1 back-to-position to-right delay-0">
+          <h2>안녕하세요<br />저의 웹사이트를 소개합니다</h2>
+        </div>
+      </div>
+    </section>
+    <section class="section scroll-spy">
+      <div class="container2">
+        <div class="tittle"><img src="img/about.png" alt="" /></div>
+        <div class="box box3 back-to-position to-right delay-0"></div>
+        <div class="box box4 back-to-position to-left delay-1">
+          <p>
+            <span>전공</span> <br />&#62; 한국폴리텍대학 정수캠퍼스 <br />&#62;
+            시각(디지털)디자인 전공 <br /><br />
+            <span>자격사항</span>
+            <br />&#62; GTQ 포토샵 1급 <br />&#62; 컴퓨터 그래픽스운용기능사
+            <br /><br />
+            <span>경력</span>
+            <br />2019&#41; 에버랜드 캐스트 <br />2020&#41; ABC마트 코리아
+            <br />2021&#41; 한국다까미야 <br />2022&#41; 바디로운피트니스
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section scroll-spy">
+      <div class="container">
+        <div class="tittle"><img src="img/skills.png" alt="" /></div>
+        <div class="box box5 back-to-position to-right delay-0"></div>
+        <div class="box box6 back-to-position to-left delay-1"></div>
+      </div>
+    </section>
+    <section class="section scroll-spy">
+      <div class="container2">
+        <div class="tittle"><img src="img/contact.png" alt="" /></div>
+        <div class="box box7 back-to-position to-right delay-0"></div>
+        <div class="box box8 back-to-position to-left delay-1"></div>
+      </div>
+    </section>
+
+    <script>
+      const spyEls = document.querySelectorAll("section.scroll-spy");
+      const controller = new ScrollMagic.Controller();
+
+      spyEls.forEach(function (spyEl) {
+        new ScrollMagic.Scene({ triggerElement: spyEl })
+          .setClassToggle(spyEl, "show")
+          .addTo(controller);
+      });
+    </script>
+  </body>
+</html>
